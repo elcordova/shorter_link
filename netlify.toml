@@ -1,3 +1,7 @@
+[[redirects]]
+  from = "/v4"
+  to = "https://api-ssl.bitly.com/"
+  status = 200
 [build]
   publish = "dist/shorter-app"
   command = "ng build --prod"
