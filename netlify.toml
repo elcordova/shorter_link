@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/v4"
+  from = "/v4/*"
   to = "https://api-ssl.bitly.com"
   status = 200
   force = true
