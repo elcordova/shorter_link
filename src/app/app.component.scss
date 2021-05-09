@@ -1,0 +1,32 @@
+:host{
+  display: grid;
+  place-items: center;
+  form{
+    display: grid;
+    grid-gap: 20px;
+    label{
+      display: grid;
+      font-size: x-large;
+      grid-template-columns: repeat(2, 1fr) 40px;
+    }
+    input[name=long-link] {
+      grid-column: span 2;
+    }
+    button[type=button]{
+      grid-column: span 1;
+    }
+    span{
+      grid-column: span 1;
+    }
+  }
+}
+
+button, input, span{
+  min-height: 30px
+}
+
+.copied {
+  border-color: aqua;
+}
+
+

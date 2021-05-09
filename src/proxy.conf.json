@@ -1,0 +1,8 @@
+{
+  "/v4": {
+    "target": "https://api-ssl.bitly.com/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
