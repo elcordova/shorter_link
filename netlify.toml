@@ -1,7 +1,7 @@
 [[redirects]]
   from = "/v4/*"
   to = "https://api-ssl.bitly.com/"
-  status = 200
+  status = 302
   force = true
   headers = {X-From = "Netlify"}
 [build]
