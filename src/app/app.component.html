@@ -2,13 +2,11 @@
 <h1>Shorter links</h1>
 <form (ngSubmit)="onSubmit(formShorter)" [formGroup]="formShorter">
   <label for="long-link">
-    <span>your link :</span>
-    <input type="url" [ngClass]="{invalid: formShorter.invalid}" name="long-link" formControlName="longLink">
+    <input type="url" placeholder="your URL here.." [ngClass]="{invalid: formShorter.invalid}" name="long-link" formControlName="longLink">
+    <button mat-raised-button color="primary">Reduce</button>
   </label>
-  <button class="btn-grad" mat-raised-button color="primary">Reduce</button>
   <label>
-    <span>your reduced link is:</span>
-    <input type="text" name="short-link" formControlName="shortLink" #inputTarget>
-    <button (cbOnSuccess)="setCopied()" type="button" ngxClipboard  mat-mini-fab [cbContent]="inputTarget.value">copy</button>
+    <input placeholder="your reduced url will be here" type="text" name="short-link" formControlName="shortLink" #inputTarget>
+    <button (cbOnSuccess)="setCopied()" [disabled]="!formShorter.get('shortLink')?.value" type="button" ngxClipboard color="accent" mat-raised-button [cbContent]="inputTarget.value">copy</button>
   </label>
 </form>
