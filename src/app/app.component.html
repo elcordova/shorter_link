@@ -1,13 +1,14 @@
+<mat-progress-bar mode="indeterminate" *ngIf="laoding"></mat-progress-bar>
 <h1>Shorter links</h1>
 <form (ngSubmit)="onSubmit(formShorter)" [formGroup]="formShorter">
   <label for="long-link">
-    <span>set your link to reduce:</span>
-    <input type="text" [ngClass]="{invalid: formShorter.invalid}" name="long-link" formControlName="longLink">
+    <span>your link :</span>
+    <input type="url" [ngClass]="{invalid: formShorter.invalid}" name="long-link" formControlName="longLink">
   </label>
-  <button [disabled]="formShorter.invalid">generate</button>
+  <button class="btn-grad" mat-raised-button color="primary">Reduce</button>
   <label>
     <span>your reduced link is:</span>
-    <input [ngClass]="{'copied': isCopied}" type="text" name="short-link" formControlName="shortLink" #inputTarget>
-    <button (cbOnSuccess)="setCopied()" type="button" ngxClipboard  [cbContent]="inputTarget.value">copy</button>
+    <input type="text" name="short-link" formControlName="shortLink" #inputTarget>
+    <button (cbOnSuccess)="setCopied()" type="button" ngxClipboard  mat-mini-fab [cbContent]="inputTarget.value">copy</button>
   </label>
 </form>
