@@ -34,6 +34,9 @@ export class AppComponent implements OnInit {
           shortLink: link
         })
         this.laoding = false;
+      }, (error)=>{
+        this._snackBar.open(error.message, `Error`)
+        this.laoding = false;
       });
     } else {
       this._snackBar.open(`invalid URL`, `Error`)
